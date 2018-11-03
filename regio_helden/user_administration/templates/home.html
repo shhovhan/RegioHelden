@@ -1,8 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="row">
- <div class="col s12 m6 offset-m3">
-  <H3>Hi {{ user.email }}!</H3>
- </div>
-</div>
+  <h1>All Users</h1>
+  <div>
+    {% for user in users %}
+      <div>
+        <span><b>First Name: </b>{{user.first_name}}</span>
+        <span><b>Last Name: </b>{{user.last_name}}</span>
+        <span><b>IBAN: </b>{{user.iban}}</span>
+        <a href="{% url 'update_user' user.id %}">Edit</a>
+        <a href="{% url 'delete_user' user.id %}">Delete</a>
+      </div>
+    {% endfor %}
+    <div>
+      <a href="{% url 'create_user' %}">Add new User</a>
+    </div>
+  </div>
 {% endblock %}

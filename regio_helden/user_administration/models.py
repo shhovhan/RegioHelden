@@ -34,3 +34,6 @@ class CustomUser(models.Model):
 
     class Meta:
         db_table = 'custom_user'
+
+    def __unicode__(self):
+        return '%s %s', (self.first_name, last_name)
