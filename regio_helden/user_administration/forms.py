@@ -26,6 +26,7 @@ class CustomUserForm(forms.ModelForm):
     @login_required
     def custom_user_create(request, template_name='custom_user_form.html'):
         form = CustomUserForm(request.POST or None)
+        form.instance.created_by = request.user
         if form.is_valid():
             print('ISVALID')
             form.save()
