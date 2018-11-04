@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # apps installed by user
     'social_django',  # for authenticating with other social networks account
+    'guardian',  # for object level permissions
     'user_administration'
 ]
 
@@ -48,6 +49,7 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOpenId',
     'social_core.backends.google.GoogleOAuth2',
     'django.contrib.auth.backends.ModelBackend',
+    'guardian.backends.ObjectPermissionBackend',
 )
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'

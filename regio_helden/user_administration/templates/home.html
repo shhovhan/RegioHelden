@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load guardian_tags %}
   <h1>All Users</h1>
   <div>
     {% for user in users %}
@@ -7,8 +8,13 @@
         <span><b>First Name: </b>{{user.first_name}}</span>
         <span><b>Last Name: </b>{{user.last_name}}</span>
         <span><b>IBAN: </b>{{user.iban}}</span>
+        {% get_obj_perms request.user for user as "user_perms" %}
+        {% if 'edit_user' in user_perms %}
         <a href="{% url 'update_user' user.id %}">Edit</a>
+        {% endif %}
+        {% if 'delete_user' in user_perms %}
         <a href="{% url 'delete_user' user.id %}">Delete</a>
+        {% endif %}
       </div>
     {% endfor %}
     <div>
