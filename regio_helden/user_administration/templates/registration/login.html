@@ -8,9 +8,9 @@
 	  <form method="post">
 	    {% csrf_token %}
 	    {{ form.as_p }}
-	    <a type="submit">Login</a>
+	    <a class="btn" type="submit">Login</a>
 	    OR
-	    <a href="{% url 'social:begin' 'google-oauth2' %}">
+	    <a class="btn" href="{% url 'social:begin' 'google-oauth2' %}">
 	     <span>Login with google</span>
 	    </a>
 	  </form>

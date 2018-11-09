@@ -2,23 +2,28 @@
 {% block content %}
 {% load guardian_tags %}
   <h1>All Users</h1>
-  <div>
+  <ul class="list-heading">
+    <li>First Name</li>
+    <li>Last Name</li>
+    <li>IBAN</li>
+    <li>
+      <a class="btn right blue" href="{% url 'create_user' %}">Add User</a>
+    </li>
+  </ul>
+  <ul class="users-list">
     {% for user in users %}
-      <div>
-        <span><b>First Name: </b>{{user.first_name}}</span>
-        <span><b>Last Name: </b>{{user.last_name}}</span>
-        <span><b>IBAN: </b>{{user.iban}}</span>
+      <li>
+        <span>{{user.first_name}}</span>
+        <span>{{user.last_name}}</span>
+        <span>{{user.iban}}</span>
         {% get_obj_perms request.user for user as "user_perms" %}
-        {% if 'edit_user' in user_perms %}
-        <a href="{% url 'update_user' user.id %}">Edit</a>
-        {% endif %}
         {% if 'delete_user' in user_perms %}
-        <a href="{% url 'delete_user' user.id %}">Delete</a>
+        <a class="right" href="{% url 'delete_user' user.id %}">Delete</a>
         {% endif %}
-      </div>
+        {% if 'edit_user' in user_perms %}
+        <a class="right" href="{% url 'update_user' user.id %}">Edit</a>
+        {% endif %}
+      </li>
     {% endfor %}
-    <div>
-      <a href="{% url 'create_user' %}">Add User</a>
-    </div>
-  </div>
+  </ul>
 {% endblock %}

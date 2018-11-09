@@ -3,6 +3,6 @@
 <h1>Delete User</h1>
 <form method="post">{% csrf_token %}
     Are you sure you want to delete " {{ user.first_name }} {{ user.last_name }} " ?
-    <input type="submit" value="Delete" />
+    <input class="btn red" type="submit" value="Delete" />
 </form>
 {% endblock %}
