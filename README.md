@@ -46,8 +46,8 @@ For more information and additional settings, please see: [Docker Compose setup]
 ## Deployment
 
 Clone or download the project. Go to the project directory and run the following commands to build the app
-* docker-compose build
-* docker-compose up
+* sudo docker-compose build
+* sudo docker-compose up
 * open your browser and type: localhost:8000
 
 Application is ready to use.
