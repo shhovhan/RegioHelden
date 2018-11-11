@@ -16,20 +16,21 @@ class CustomUser(models.Model):
     first_name = models.CharField(max_length=50,
                                   validators=[RegexValidator(
                                       r'^[a-zA-Z]+$',
-                                      'Enter a valid first name. This value may contain only '
-                                      'letters.')]
+                                      'Enter a valid first name.'
+                                      'This value may contain only letters.')]
                                   )
     last_name = models.CharField(max_length=50,
                                  validators=[RegexValidator(
                                      r'^[a-zA-z]+$',
-                                     'Enter a valid last name. This value may contain only '
-                                     'letters.')]
+                                     'Enter a valid last name.'
+                                     'This value may contain only letters.')]
                                  )
-    iban = models.CharField(max_length=50, unique=True,
+    iban = models.CharField(max_length=34, unique=True,
                             validators=[RegexValidator(
-                                r'^[\w]+$',
-                                'Enter a valid iban. This value may contain only'
-                                'letters, numbers.')]
+                                r'^[A-Z]{2}[0-9]{2}[a-zA-z0-9]{4}[0-9]{7}([a-zA-z0-9]?){0,19}$',
+                                'Enter a valid IBAN. It should start with '
+                                'country code and may contain only letters, '
+                                'numbers.')]
                             )
 
     class Meta:
