@@ -4,12 +4,12 @@ Simple Django application to manage (CRUD) users and their bank account data (IB
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project.
 ### Prerequisites
 
-What things you need to install and build the software
+What additional tools you need to install and build the software:
 * Docker Engine
 * Docker Compose
 ### Installing
 
-Install Docker Enginne on Ubuntu
+Install Docker Engine on Ubuntu
 * sudo apt-get update
 * sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 * sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
@@ -30,7 +30,7 @@ docker.service - Docker Application Container Engine
            ├─5528 /usr/bin/dockerd -H fd://
            └─5557 docker-containerd -l unix:///var/run/docker/libcontainerd/docker-containerd.sock --metrics-interval=0 --start-timeout 2m --s
  ```
-Docker engine is ready. For more information and additional settings: [Docker engine setup](https://docs.docker.com/install/#server)
+Docker engine is ready. For more information and additional settings, please see: [Docker engine setup](https://docs.docker.com/install/#server)
 
 Install Docker Compose on Ubuntu
 * sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -41,16 +41,16 @@ It should return something like this:
 ```
 docker-compose version 1.23.1, build 1719ceb
 ```
-For more information and additional settings: [Docker Compose setup](https://docs.docker.com/compose/install/)
+For more information and additional settings, please see: [Docker Compose setup](https://docs.docker.com/compose/install/)
 
 ## Deployment
 
-Clone or download project. Go to project directory and run following commands to build app
+Clone or download the project. Go to the project directory and run the following commands to build the app
 * docker-compose build
 * docker-compose up
 * open your browser and type: localhost:8000
 
-Application ready to use.
+Application is ready to use.
 
 ## Built With
 * [Python 3+](https://docs.python.org/3/)
