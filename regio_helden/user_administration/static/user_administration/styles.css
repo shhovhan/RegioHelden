@@ -1,30 +1,37 @@
-    .list-heading {
-    	margin-bottom: 0;
-    	border-bottom: 1px solid #555;
-    }
-    .list-heading,
-    .users-list,
-    .users-list li {
-    	display: inline-block;
-    	width: 100%;
-    }
-    .list-heading li,
- 	.users-list li span {
- 		width: 24.5%;
- 		display: inline-block;
- 		box-sizing: border-box;
- 		padding-left: 10px;
- 	}
- 	.users-list {
- 		margin-top: 0;
- 	}
-    .users-list li {
-    	padding: 5px 0;
-    }
-    .users-list li:nth-child(2n) {
-    	background-color: #eee;
-    }
- 	.users-list > li a {
- 		display: inline-block;
- 		margin: 0 10px 0 2.5px;
- 	}
+.list-heading {
+	margin-bottom: 0;
+	border-bottom: 1px solid #555;
+}
+.list-heading,
+.users-list,
+.users-list li {
+	display: inline-block;
+	width: 100%;
+}
+.list-heading li,
+	.users-list li span {
+		width: 24.5%;
+		display: inline-block;
+		box-sizing: border-box;
+		padding-left: 10px;
+	}
+	.users-list {
+		margin-top: 0;
+	}
+.users-list li {
+	padding: 5px 0;
+}
+.users-list li:nth-child(2n) {
+	background-color: #eee;
+}
+	.users-list > li a {
+		display: inline-block;
+		margin: 0 10px 0 2.5px;
+	}
+a.btn.login {
+    padding: 0 10px;
+    background-color: #ea4335;
+}
+a.login:hover {
+    background-color: #c82114;
+}

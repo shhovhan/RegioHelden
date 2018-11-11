@@ -4,16 +4,10 @@
 	<div class="container">
 	 <div class="row">
 	  <br><br>
-	  <h2>Login</h2>
-	  <form method="post">
-	    {% csrf_token %}
-	    {{ form.as_p }}
-	    <a class="btn" type="submit">Login</a>
-	    OR
-	    <a class="btn" href="{% url 'social:begin' 'google-oauth2' %}">
-	     <span>Login with google</span>
+	  <h2>Welcome</h2>
+	    <a class="btn login google" href="{% url 'social:begin' 'google-oauth2' %}">
+        <i class="fab fa-google left"></i> Login with google
 	    </a>
-	  </form>
 	 </div>
 	</div>
 {% endblock %}
