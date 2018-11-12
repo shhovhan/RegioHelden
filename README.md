@@ -33,6 +33,7 @@ docker.service - Docker Application Container Engine
 Docker engine is ready. For more information and additional settings, please see: [Docker engine setup](https://docs.docker.com/install/#server)
 
 Install Docker Compose on Ubuntu
+* sudo apt-get install curl
 * sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 * sudo chmod +x /usr/local/bin/docker-compose
 * docker-compose --version
@@ -57,6 +58,9 @@ Application is ready to use.
 * [Django v2.1](https://docs.djangoproject.com/en/2.1/)
 * [PostgreeSQL](https://www.postgresql.org/)
 * [Django social-auth](https://python-social-auth-docs.readthedocs.io/en/latest/configuration/django.html)
+
+### Testing
+Application tested on Ubuntu 16.04+. If your Ubuntu version is < 16.04, then check repository for docker and use correct repository.
 
 ## Authors
 
